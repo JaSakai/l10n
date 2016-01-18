@@ -37,7 +37,7 @@ import glob
 import l10n
 
 # TMX Project Name on Transifex
-project_name = 'sakai-trunk'
+project_name = os.getenv('TRANSIFEX_SAKAI_PROJECTNAME','sakai-trunk')
 
 # Extract path information
 cwdir = os.path.dirname( os.path.abspath( __file__ ) )
