@@ -1,6 +1,6 @@
 # Usage of l10n tool for synchronizing translation resources between Sakai GitHub repository and Transifex.
 
-1. First of all, you have to install transifex-client by following the procedures described in 'http://docs.transifex.com/developer/client/setup'. Only installation step is needed, and you do not need to do 'Configuration' step described in that page.
+1. First of all, you have to install transifex-client by following the procedures described in 'https://docs.transifex.com/client/installing-the-client'. Only installation step is needed, and you do not need to do 'Configuration' step described in that page.
 
 1. Please download the latest sakai source code from GitHub by the following commands.
     ```
