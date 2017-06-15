@@ -18,14 +18,14 @@
     ```
 
 1. In the case of uploading translations to Transifex, please follow [5-i]. In the case of downloading translations from Transifex, please follow [5-ii].
-  1. Please run following command to upload all localized resources to Transifex. Following command is an example for Japanese translation. Please change 'ja' to your language code.
-    ```
-    python tmx.py upload -u -l ja
-    ```
+    1. Please run following command to upload all localized resources to Transifex. Following command is an example for Japanese translation. Please change 'ja' to your language code.
+        ```
+        python tmx.py upload -u -l ja
+        ```
 
-  1. Please run following command to download all localized resources (ja: Japanese) from Transifex. If you want to download only reviewed resources, please add '-r' option. Following command is an example for Japanese translation. Please change 'ja' to your language code.
-    ```
-    python tmx.py download -u -l ja
-    ```
+    1. Please run following command to download all localized resources (ja: Japanese) from Transifex. If you want to download only reviewed resources, please add '-r' option. Following command is an example for Japanese translation. Please change 'ja' to your language code.
+        ```
+        python tmx.py download -u -l ja
+        ```
 
 After the step 5-ii, '.properties' files of sakai source codes are replaced with the translation done in Transifex. You need to do steps 1, 2, 3, and 4 only once, and you can skip these steps from the second trial.
