@@ -111,7 +111,7 @@ def EnumPropertiesFiles( root, verbose = False ):
 					elif tprolng.match( fname ):
 						list.append( ( os.path.join( path, filename ), 0 ) )
 				elif verbose:
-					print "  [ignored] " + filename
+					print("  [ignored] " + filename)
 	return( list )
 
 
@@ -224,28 +224,28 @@ def PoToProperties( pofilename, language, keep_comments, verbose = False ):
 								jprops.write_property( fw, key, msgs[ key ] )
 							else:
 								jprops.write_property( fw, key, mpo[ key ] )
-				except IOError, ( errno, msg ):
-					print 'except: Cannot write to %s' % fname
-					print 'errid: [%d] msg: [%s]' % (errno, msg)
+				except IOError as err:
+					print('except: Cannot write to %s' % fname)
+					print(err)
 				finally:
 					fw.close( )
-			except IOError, ( errno, msg ):
-				print 'except: Cannot open "%s"' % fname
-				print 'errid: [%d] msg: [%s]' % (errno, msg)
+			except IOError as err:
+				print('except: Cannot open "%s"' % fname)
+				print(err)
 		else:
 			try: # check for file open
 				fw = open( fname, 'w' )
 				try: # check for writing contents
 					for key in msgs:
 						jprops.write_property( fw, key, msgs[ key ] )
-				except IOError, ( errno, msg ):
-					print 'except: Cannot write to %s' % fname
-					print 'errid: [%d] msg: [%s]' % (errno, msg)
+				except IOError as err:
+					print('except: Cannot write to %s' % fname)
+					print(err)
 				finally:
 					fw.close( )
-			except IOError, ( errno, msg ):
-				print 'except: Cannot open "%s"' % fname
-				print 'errid: [%d] msg: [%s]' % (errno, msg)
+			except IOError as err:
+				print('except: Cannot open "%s"' % fname)
+				print(err)
 
 
 def ReadProperties( module, language, verbose = False ):
@@ -253,7 +253,7 @@ def ReadProperties( module, language, verbose = False ):
 
 	if pot is None:
 		if verbose:
-			print "  [no resource] '" + module + "' does not have .properties file."
+			print("  [no resource] '" + module + "' does not have .properties file.")
 		return
 	if language is None:
 		path = os.path.join( '.', 'templates' )
@@ -278,7 +278,7 @@ def WriteProperties( module, language, keep_comments, verbose = False ):
 
 def l10n( modules, write, language, keep_comments, verbose ):
 	if not modules:
-		print( 'You must specify module name.' )
+		print('You must specify module name.')
 		return( False )
 	elif write:
 		if language is None:
@@ -286,11 +286,11 @@ def l10n( modules, write, language, keep_comments, verbose ):
 			return( False )
 		else:
 			for module in modules:
-				print( "Write .properties for %s..." % module )
+				print("Write .properties for %s..." % module)
 				WriteProperties( module, language, keep_comments, verbose )
 	else:
 		for module in modules:
-			print( "Read .properties from %s..." % module )
+			print("Read .properties from %s..." % module)
 			ReadProperties( module, language, verbose )
 
 	return( True )
