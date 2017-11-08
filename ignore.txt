@@ -46,3 +46,4 @@ RepositoryManager.properties
 swift.properties
 UserAttributeRoleProvider.properties
 content_type_classes.properties
+application.properties
